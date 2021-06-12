@@ -1,0 +1,44 @@
+version: '3'
+services:
+        
+    mongo:
+        image: olejiksin/mongo
+        restart: on-failure
+        build:
+            context: ./mongo
+            dockerfile: Dockerfile
+        environment: 
+            - MONGO_INITDB_DATABASE=diplom
+        ports:
+          - 27017:27017
+    
+    back:
+        build: 
+            context: ./dip
+            dockerfile: Dockerfile
+        image: olejiksin/backdip
+        working_dir: /dip
+        volumes:
+         - ./dip:/dip
+        ports: 
+            - 8080:8080
+        depends_on:
+            - mongo
+        command: mvn clean spring-boot:run
+            
+    front:
+        build: 
+            context: ./diplom/proj
+            dockerfile: Dockerfile
+        image: front
+        volumes:
+          - ./diplom/proj:/usr/src/app
+        ports:
+            - 2000:2000
+        depends_on:
+            - back
+        command: npm start
+    
+  
+    
+   
