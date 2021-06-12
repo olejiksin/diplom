@@ -1,0 +1,190 @@
+@import 'main.scss';
+
+#app-type-selector {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: 10%;
+  background-color: #94b4d7;
+  width: 24rem;
+  justify-content: space-around;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.app-type-selector-div {
+  @extend .header-link;
+  //margin-right: auto;
+}
+
+.appList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  color: black;
+  background-color: gainsboro;
+  padding: 10px;
+  margin: 0 auto;
+  font-size: 16px;
+  //border: #6dc0f3 3px solid;
+  border-radius: 4px;
+}
+
+td {
+  margin: 0 6px 0 6px;
+  padding: 10px 10px 5px 10px;
+  text-align: center;
+  font-weight: 500;
+  min-width: 5%;
+}
+
+.td-td {
+  overflow: auto;
+}
+
+tr {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  background-color: #b8b8b8;
+  border-radius: 5px;
+  margin: 5px auto;
+}
+
+//thead {
+//  display: flex;
+//  flex-direction: row;
+//  flex-wrap: wrap;
+//  flex: 1 1 auto;
+//  justify-content: space-between;
+//  width: 71%;
+//}
+//
+//thead.db-thead {
+//  display: flex;
+//  flex-direction: row;
+//  flex-wrap: wrap;
+//  flex: 1 1 auto;
+//  justify-content: space-between;
+//  width: 61%;
+//}
+
+.oops {
+  display: block;
+  margin: 0 25%;
+}
+
+.appList-micro {
+  @extend .appList;
+  width: 55%;
+  min-width: 26rem;
+}
+
+.appList-micro > tbody > tr {
+  display: flex;
+  flex-direction: row;
+  //flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+  &>td{
+    margin-right: 30px;
+  }
+}
+
+.drop-micro {
+  cursor: pointer;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  right: 4%;
+  top: 0;
+  transition: 0.2s;
+  border-radius: 50%;
+
+  &:hover {
+    &::after, &::before {
+      background-color: #282c34;
+      box-shadow: 0 1px 10px 0 #282c34;
+      transition-delay: 0.3s;
+    }
+  }
+
+  &::after, &::before {
+    border-radius: 5px;
+    left: 9px;
+    top: 3px;
+    content: '';
+    position: relative;
+    height: 3px;
+    width: 21px;
+    display: block;
+    background-color: white;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+    transition: 0.4s;
+  }
+
+  &::before {
+    left: 15px;
+    top: 24px;
+    transform-origin: left top;
+    transform: rotate(-135deg);
+  }
+
+  &-str-up {
+    transform: scaleY(-1);
+  }
+}
+
+.appList-micro-sublist {
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    left: 0;
+  }
+
+  left: 2%;
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 0 auto -5px;
+  border-radius: 5px;
+
+  & table {
+    width: 100%;
+  }
+
+  & tr {
+    height: 40px;
+    margin-top: 15px;
+    display: flex;
+    position: relative;
+    width: 100%;
+    background-color: #94b4d7;
+    padding-bottom: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    &> td {
+      position: relative;
+      top: -3px;
+      margin-top:5px;
+    }
+
+    & button {
+      top: -2px;
+    }
+  }
+}

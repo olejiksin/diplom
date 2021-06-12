@@ -1,0 +1,89 @@
+{
+  "name": "diplom",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.4.0",
+    "@types/jest": "^26.0.16",
+    "@types/node": "^12.19.8",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.10",
+    "@types/react-redux": "latest",
+    "@types/react-router-dom": "latest",
+    "@types/redux": "latest",
+    "axios": "^0.21.1",
+    "crypto-js": "^4.0.0",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "0.0.0-7f28234f8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "source-map-loader": "^1.1.3",
+    "typescript": "^4.1.2",
+    "webpack": "4.44.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "tsc",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "parcel src/index.html --port 3000",
+    "package": "parcel build src/index.html --out-dir parcel/release --public-url ./"
+  },
+  "proxy": "http://localhost:8080",
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "latest",
+    "@types/crypto-js": "^4.0.1",
+    "@types/redux-logger": "^3.0.8",
+    "@types/webpack": "latest",
+    "@webpack-cli/serve": "^1.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "latest",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^4.11.0",
+    "react": "latest",
+    "react-router-dom": "^5.2.0",
+    "redux-devtools-extension": "^2.13.8",
+    "sass-loader": "latest",
+    "style-loader": "latest",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "webpack": "latest",
+    "webpack-cli": "^4.2.0",
+    "eslint": "latest",
+    "webpack-dev-server": "3.11.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  }
+}

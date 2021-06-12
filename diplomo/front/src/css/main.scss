@@ -1,0 +1,377 @@
+@import 'login_reg.scss';
+
+.main {
+  position: absolute;
+  display: flex;
+  margin: 0 15%;
+  width: 70%;
+  background-color: #636363;
+}
+
+.btn {
+  top: 5px;
+  position: relative;
+  right: 30px;
+  @extend .log-reg-btn;
+  margin: 0 10px;
+  width: 130px;
+  height: 30px;
+  border-radius: 4px;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &-selected {
+    color: white;
+    background-color: dimgray;
+  }
+
+  &-delete_stop {
+    top: -3px;
+    right: 0;
+    color: darkred;
+    background: #f4f4f4;
+
+    &:hover {
+      box-shadow: 0 1px 5px #b50000, 0 1px 10px #ff0000, 0 1px 15px #f33b41, 1px 5px 10px #f36e6b;
+      background-color: #f36e6b;
+      transition-delay: 0.3s;
+      color: black;
+    }
+  }
+
+  &-start {
+    top: -3px;
+    right: 0;
+    color: darkgreen;
+    background: #f4f4f4;
+
+    &:hover {
+      box-shadow: 0 1px 5px #0a860d, 0 1px 10px #0ab70d, 0 1px 15px #0af50d, 1px 5px 10px #88ff8d;
+      background-color: #6bd56e;
+      transition-delay: 0.3s;
+      color: black;
+    }
+  }
+}
+
+.btn-new-app {
+  left: 0;
+  display: block;
+  font-size: 20px;
+  position: relative;
+  height: 50px;
+  width: 150px;
+  margin: 0 auto 30px;
+}
+
+.new-app {
+  min-width: 400px;
+  margin: 1% auto 5em auto;
+  width: 50%;
+  background-color: #94b4d7;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 20px 50px 7px #94b4d7;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+$transition: all .4s ease;
+
+.text-input-main {
+  border: none;
+  font-size: 20px;
+  color: black;
+  margin: 0 auto;
+  width: 70%;
+  height: 35px;
+  border-radius: 2px;
+  box-shadow: inset 10px 2px 10px rgba(159, 217, 255, 0.7), 0 0 0 5px #f5f7f8;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+}
+
+.main-input-label {
+  @extend .log-label;
+  margin: 12px 15%;
+}
+
+
+.radio-input {
+  cursor: pointer;
+  position: relative;
+  content: '';
+  font-size: 20px;
+  margin: 0 15%;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
+.radio-label {
+  top: -23px;
+  left: 0;
+  margin: 0 20%;
+  font-weight: bold;
+  position: relative;
+  display: block;
+}
+
+.select-language {
+  @extend .text-input-main;
+  width: 41%;
+}
+
+.div-own-server {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-main {
+  background-color: #94b4d7;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin: 0 auto 40px;
+  border-radius: 5px;
+}
+
+.header-link {
+  border: none;
+  color: black;
+  position: relative;
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 16px;
+  height: 40px;
+  background-color: #e7e7e7;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 0.5;
+  margin: 0 20px 0 5px;
+  text-align: center;
+  padding: 10px 12px 0 12px;
+  border-radius: 5px 5px 2px 2px;
+
+  &:focus {
+    outline: none;
+  }
+
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 1px 10px 1px #78caf9, 0 1px 10px 1px #6dc0f3, 0 1px 10px 1px #2196f3, 0 1px 10px 1px #2196f3;
+    background-color: #e5ecf8;
+    opacity: 1.0;
+    transition-delay: 0.3s;
+  }
+
+  &-selected {
+    opacity: 1.0;
+
+    &::after {
+      top: 91%;
+      border-top: solid 4px rgba(66, 106, 255, 0.9);
+      border-radius: 4px;
+      position: absolute;
+      display: block;
+      content: '';
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+
+      animation-name: hover_animation;
+      animation-duration: 1.0s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+    }
+  }
+}
+
+@keyframes hover_animation {
+  0% {
+    left: 50%;
+    width: 0;
+  }
+  70% {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.main-main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#file-uploader {
+  display: none;
+}
+
+#file-uploader-label {
+  @extend .log-reg-btn;
+  text-align: center;
+  //background-color: white;
+  font-size: 20px;
+  color: white;
+  margin: 0 14% 30px;
+  width: 25%;
+  height: auto;
+  min-height: 30px;
+  border: black 1px solid;
+  border-radius: 5px;
+  //box-shadow: inset 10px 2px 10px rgba(159, 217, 255, 0.7), 0 0 0 5px #f5f7f8;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.new-app > h2 {
+  margin: 20px auto;
+  width: auto;
+}
+
+#type-select {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  margin: 2% auto;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.radio-input-apptype {
+  margin-left: -5%;
+  margin-top: 40px;
+  position: relative;
+  display: block;
+  transition: 0.4s;
+}
+
+.radio-input-apptype > input {
+  display: none;
+}
+
+.radio-input-apptype > label {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  padding: 20px;
+  background-color: #5b5b5b;
+  border-radius: 5px;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: 0 1px 10px 1px #282c34, 0 1px 10px 1px #636363, 0 1px 10px 1px #7e7e7e, 0 1px 10px 1px #7e7e7e;
+    background-color: #636363;
+    transition-delay: 0.3s;
+  }
+}
+
+.radio-input-apptype > input[type=radio]:checked + label {
+  background-color: #282c34;
+}
+
+#db-log-label-first {
+  margin-top: 4%;
+}
+
+#appLangSelector {
+  margin: 0 15%;
+}
+
+.new-worker-btn {
+  @extend .btn-new-app;
+  display: block;
+  height: auto;
+  width: 200px;
+  font-size: 18px;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: 0 1px 10px 1px #78caf9, 0 1px 10px 1px #6dc0f3, 0 1px 10px 1px #2196f3, 0 1px 10px 1px #2196f3;
+    background-color: #d5e2f3;
+    transition-delay: 0.3s;
+    color: black;
+  }
+}
+
+#h2-loader {
+  position: relative;
+  width: 25rem;
+  display: block;
+  top: 0;
+  margin: 4% auto -5%;
+}
+
+#dbSelector {
+  margin-left: 15%;
+}
+
+#db-main-input-label-first {
+  margin-top: 30px;
+}
+
+.new-db {
+  @extend .new-app;
+  width: 45%;
+}
+
+.project-port {
+  position: relative;
+  display: block;
+  & div{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+
+.project-port-label {
+  position: relative;
+  display: block;
+  color: black;
+  font-weight: bold;
+  margin: 12px 18.7% 0 ;
+}
+.project-port-input{
+  border: none;
+  font-size: 20px;
+  color: black;
+  margin-left: 16%;
+  margin-right: 11%;
+  width: 20%;
+  height: 35px;
+  border-radius: 2px;
+  box-shadow: inset 10px 2px 10px rgba(159, 217, 255, 0.7), 0 0 0 5px #f5f7f8;
+  transition: $transition;
+}
+.project-port-button{
+  position: relative;
+  display: block;
+  margin: 20px auto 0;
+  left: 0;
+}
